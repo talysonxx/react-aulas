@@ -1,7 +1,6 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import "./style.css"
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './style.css'
 
 const App = () => {
 
@@ -12,5 +11,5 @@ const App = () => {
     }
 }
 
-const rootElement = document.getElementById("root")
+const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)

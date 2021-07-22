@@ -10,7 +10,14 @@ function soma(a = 0, b = 0){
 
 
 function nada(){
-  window.confirm('você é gay?')
+  let resultado = false
+  while(!resultado){
+    resultado = window.confirm('você é?')
+  }
+  alerta()
+}
+function alerta(){
+  window.alert('então você é')
 }
 
 function botao(a = 0, b = 0, nome = '', idade = '0 anos'){

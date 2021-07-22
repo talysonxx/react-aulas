@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-// import './style.css'
+import './style.css'
 
 const element = 'DIO'
 const element2 = <h1>SIM</h1>

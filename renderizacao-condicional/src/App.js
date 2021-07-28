@@ -29,6 +29,23 @@ function App() {
     )
   }
   
+  const arrClientes = [
+    {
+      id: 1,
+      nome: 'mateus',
+      skills: ['c', 'c++', 'assembly']
+    },
+    {
+      id: 2,
+      nome: 'julia',
+      skills: ['java', 'go', 'kotlin']
+    },
+    {
+      id: 12,
+      nome: 'breno',
+      skills: ['python', 'js', 'c#']
+    }
+  ]
   return (
     <div>
       <p>tem cliente: {temClientes ? `sim` : `não`}</p>
@@ -36,8 +53,28 @@ function App() {
       {/* se clientes  for verdade o botão aparece */}
       {temClientes ? mostrarHistorico() : cadastrarCliente()}
       {mostrarCliente()}
+      
+      
+      
+      
+      
+      
+      <h1>Arrays e objetos</h1>
+      <ul>
+        {arrClientes.map(renderizarClientola)}
+      </ul>
     </div>
   );
+  function renderizarClientola(clientes, index){
+    return( 
+      <div  key={`cliente-${clientes.id}`}>
+        <li>{clientes.nome}; id: {clientes.id + 1}; skills: {clientes.skills.map(renderizarSkills)}</li>
+      </div>
+    )
+  }
+  function renderizarSkills(skills, index){
+    return <span>{skills}, </span>
+  }
 }
 
 export default App;

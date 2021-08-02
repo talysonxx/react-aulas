@@ -2,6 +2,7 @@ import React from "react";
 import Button from './Button'
 
 function MyLabel(props){
+
   return(
     <div>
       {console.log(props)}

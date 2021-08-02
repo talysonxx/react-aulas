@@ -1,4 +1,5 @@
 import React from 'react'
+import Relogio from './Componentes/Relogio'
 
 const buttonA = <button>ver histórico</button>
 const buttonB = <button>cadastrar</button>
@@ -48,6 +49,9 @@ function App() {
   ]
   return (
     <div>
+      <header>
+        <Relogio/>
+      </header>
       <p>tem cliente: {temClientes ? `sim` : `não`}</p>
       <h1 id="lula12">okOK</h1>
       {/* se clientes  for verdade o botão aparece */}

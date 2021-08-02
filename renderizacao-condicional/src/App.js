@@ -5,7 +5,7 @@ const buttonA = <button>ver histórico</button>
 const buttonB = <button>cadastrar</button>
 const temClientes = true
 
-function App() {
+export default function App() {
   const mostrarHistorico = () => (
         <div>
           Clique aqui para acessar o histórico dos clientes
@@ -52,6 +52,15 @@ function App() {
       <header>
         <Relogio/>
       </header>
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <p>tem cliente: {temClientes ? `sim` : `não`}</p>
       <h1 id="lula12">okOK</h1>
       {/* se clientes  for verdade o botão aparece */}
@@ -80,5 +89,3 @@ function App() {
     return <span>{skills}, </span>
   }
 }
-
-export default App;

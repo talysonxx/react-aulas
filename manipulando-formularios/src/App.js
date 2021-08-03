@@ -16,14 +16,13 @@ function App() {
   return (
     <>
       <form>
-        <label>Dgite algo</label>
+        <label htmlFor="nome">Dgite algo</label>
         <br/>
-        <input type="text" value={nome} onChange={(event) => handleChangeNome(event)}></input>
+        <input id="nome" type="text" value={nome} onChange={(event) => handleChangeNome(event)}></input>
         <p>Digitou: {window.localStorage.getItem('valor')}</p>
 
-
-        <label>Selecione um carro</label>
-        <select value={carro} onChange={(event) => handleChangeSelect(event)}>
+        <label htmlFor="carros">Selecione um carro</label>
+        <select id="carros" value={carro} onChange={(event) => handleChangeSelect(event)}>
           <option value="prisma">Prisma</option>
           <option value="limosine">Limosine</option>
           <option value="audio-ultron-r8">Audio Ultron R8</option>

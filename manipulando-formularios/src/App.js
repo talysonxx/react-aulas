@@ -24,9 +24,30 @@ function App() {
     window.console.log({value})
   }
 
+
+
+
+
+  const initObj = {
+    nome: null,
+    sobrenome: null,
+    idade: null
+  }
+  const [form, setForm] = useState(initObj)
+  const changeWithState = ({target: {id, value}}) => {
+    // window.console.log({value, id})
+    if(id == 'nome-form-2'){
+      setForm({nome: value, sobrenome: form.sobrenome, idade: form.idade})
+    }else if(id == 'sobrenome-form-2'){
+      setForm({nome: form.nome, sobrenome: value, idade: form.idade})
+    }else{
+      setForm({nome: form.nome, sobrenome: form.sobrenome, idade: value})
+    }
+  }
+
   return (
     <>
-      <form>
+      <form style={{marginBottom: '20px'}}>
         <label htmlFor="nome">Dgite algo</label>
         <br/>
         <input id="nome" type="text" value={nome} onChange={onChangeName}></input>
@@ -41,6 +62,32 @@ function App() {
         </select>
         <br/>
         <label>Carro selecionado: {carro}</label>
+      </form>
+
+
+
+
+      {/* agora usando apenas um state */}
+      <form>
+        <label htmlFor="nome-form-2">Digite nome</label>
+        <br/>
+        <input id="nome-form-2"value={form.nome} type="text" onChange={changeWithState}></input>
+        <br/>
+
+        <label htmlFor="sobrenome-form-2">Digite sobrenome</label>
+        <br/>
+        <input id="sobrenome-form-2" value={form.sobrenome} type="text" onChange={changeWithState}></input>
+        <br/>
+
+        <label htmlFor="idade-form-2">Digite idade</label>
+        <br/>
+        <input id="idade-form-2" value={form.idade} type="number" onChange={changeWithState}></input>
+
+        <p>
+          Nome completo: {form.nome} {form.sobrenome}
+          <br/>
+          Idade: {form.idade == null ? null : `${form.idade} anos`}
+        </p>
       </form>
     </>
   );

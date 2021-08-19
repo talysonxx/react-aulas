@@ -4,6 +4,7 @@ import Carousel from './components/Carousel/Carousel'
 function App() {
   useEffect(() => {
     document.title = 'React - carrosel'
+    document.body.style.backgroundColor = 'lightblue'
   })
 
   return (

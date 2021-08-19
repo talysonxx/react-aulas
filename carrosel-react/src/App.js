@@ -2,11 +2,12 @@ import React, {useEffect} from 'react'
 
 function App() {
   useEffect(() => {
-    window.document.title = 'React - aulas'
+    document.title = 'React - carrosel'
   })
 
   return (
     <>
+      <h1>Carrosel</h1>
     </>
   )
 }

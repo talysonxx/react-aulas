@@ -55,7 +55,7 @@ function pesquisarCategoria(categoriaDigitada, stateCarro) {
   return (
     <div>
       <label>Digite uma nova categoria</label>
-    <input type="text" value={categoriaDigitada} onChange={({target: {value}}) => stateCarro(value)}></input>
+      <input type="text" value={categoriaDigitada} onChange={({target: {value}}) => stateCarro(value)}></input>
     </div>
   )
 }

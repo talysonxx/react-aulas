@@ -5,8 +5,8 @@ export default function TabelaIMC(){
         <table>
             <thead>
                 <tr>
-                    <td>Classificação</td>
-                    <td>IMC</td>
+                    <th>Classificação</th>
+                    <th>IMC</th>
                 </tr>
             </thead>
             <tbody>

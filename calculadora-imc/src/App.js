@@ -7,26 +7,36 @@ function App(){
   })
 
   function atualizarPeso({target: {value}}){
-    console.log(value)
+    // console.log(value)
     setPesoAltura({peso: value, altura: pesoAltura.altura})
   }
+
   function atualizarAltura({target: {value}}){
-    console.log(value)
+    // console.log(value)
     setPesoAltura({peso: pesoAltura.peso, altura: value})
   }
-  function calcularIMC(){
 
-    // if(pesoAltura.peso == ('' || 0) || pesoAltura.altura == ('' || 0)){
-    if((pesoAltura.peso == '' || pesoAltura.peso <= 0)  || (pesoAltura.altura == '' || pesoAltura.altura <= 0)){
+  function validador(){
+    if((pesoAltura.peso === '' || pesoAltura.peso <= 0)  || (pesoAltura.altura === '' || pesoAltura.altura <= 0)){
       alert('preencha os dados')
     }else{
-      alert('certo')
+      // alert('certo')
+      calcularIMC()
     }
   }
 
+  function calcularIMC(){
+    const IMC = (pesoAltura.peso / pesoAltura.altura ** 2).toFixed(2).replace('.', ',')
+    // console.log('Seu IMC é:', IMC)
+    // const h1 = document.createElement('h1')
+    // h1.innerHTML = `${IMC}`
+    document.getElementById('resultado').innerHTML = `Seu IMC é: ${IMC}`
+    // document.getElementById('resultado').appendChild(h1)
+  }
+
   const [pesoAltura, setPesoAltura] = useState({
-    peso: null,
-    altura: null
+    peso: '',
+    altura: ''
   })
 
   return (
@@ -42,12 +52,14 @@ function App(){
       onChange={event => atualizarAltura(event)}
       value={pesoAltura.altura}
       type='number'
-      placeholder='Digite a sua altura (em cm)'
+      placeholder='Digite a sua altura (em m)'
       required/>
-      <button onClick={() => calcularIMC()}>Calcular IMC</button>
+
+      <button onClick={() => validador()}>Calcular IMC</button>
+
       <TabelaIMC/>
     </div>
-  );
+  )
 }
 
 export default App;

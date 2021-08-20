@@ -36,6 +36,10 @@ function App(){
     // document.getElementById('resultado').appendChild(h1)
   }
 
+  function focusInput(){
+    document.getElementsByTagName('input')[0].focus()
+  }
+
   const [pesoAltura, setPesoAltura] = useState({
     peso: '',
     altura: ''
@@ -43,7 +47,8 @@ function App(){
 
   return (
     <div className='container'>
-      <h1>Calcular IMC</h1>
+      <h1 onClick={() => focusInput()}>Calcular IMC</h1>
+
       <div className='inputs'>
         <input
         onChange={event => atualizarPeso(event)}

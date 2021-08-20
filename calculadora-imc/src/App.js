@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import TabelaIMC from './Componentes/Tabela/Tabela';
 import './App.css'
-import Div from './Componentes/Styles/Styles'
+// import Div from './Componentes/Styles/Styles'
 
 function App(){
   useEffect(() => {

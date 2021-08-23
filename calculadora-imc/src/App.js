@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import TabelaIMC from './Componentes/Tabela/Tabela'
+// import TabelaIMC from './Componentes/Tabela/Tabela'
 import TabelaImcClass from './Componentes/Tabela/TabelaClass'
 import InputAlturaClass from './Componentes/Input/InputAlturaClass'
 import InputPesoClass from './Componentes/Input/InputPesoClass'
+import CalcularImcClass from './Componentes/CalcularImcClass/CalcularImcClass'
 import './App.css'
 
 function App(){
@@ -20,22 +21,27 @@ function App(){
     setPesoAltura({peso: pesoAltura.peso, altura: value})
   }
 
-  function validador(){
+  function validador(resultado){
     if((pesoAltura.peso === '' || pesoAltura.peso <= 0)  || (pesoAltura.altura === '' || pesoAltura.altura <= 0)){
       alert('preencha os dados')
     }else{
       // alert('certo')
-      calcularIMC()
+      // calcularIMC()
+      imprimirResutlado(resultado)
     }
   }
 
-  function calcularIMC(){
-    const IMC = (pesoAltura.peso / pesoAltura.altura ** 2).toFixed(2).replace('.', ',')
-    // console.log('Seu IMC é:', IMC)
-    // const h1 = document.createElement('h1')
-    // h1.innerHTML = `${IMC}`
-    document.getElementById('resultado').innerHTML = `Seu IMC é: ${IMC}`
-    // document.getElementById('resultado').appendChild(h1)
+  // function calcularIMC(){
+  //   const IMC = (pesoAltura.peso / pesoAltura.altura ** 2).toFixed(2).replace('.', ',')
+  //   // console.log('Seu IMC é:', IMC)
+  //   // const h1 = document.createElement('h1')
+  //   // h1.innerHTML = `${IMC}`
+  //   document.getElementById('resultado').innerHTML = `Seu IMC é: ${IMC}`
+  //   // document.getElementById('resultado').appendChild(h1)
+  // }
+
+  function imprimirResutlado(resultado){
+    document.getElementById('resultado').innerHTML = `Seu IMC é: ${resultado}`
   }
 
   function focusInput(){
@@ -76,7 +82,13 @@ function App(){
         value={pesoAltura.altura}
         onChange={atualizarAltura}/>
 
-        <button onClick={() => validador()}>Calcular IMC</button>
+        {/* <button onClick={() => validador()}>Calcular IMC</button> */}
+        <CalcularImcClass
+        onClick={validador}
+        texto='Calcular IMC'
+        pesoAltura={pesoAltura}
+        imprimirResutlado={imprimirResutlado}
+        validador={validador}/>
       </div>
 
       {/* <TabelaIMC/> */}

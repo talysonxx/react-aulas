@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import TabelaIMC from './Componentes/Tabela/Tabela'
 import TabelaImcClass from './Componentes/Tabela/TabelaClass'
+import InputAlturaClass from './Componentes/Input/InputAlturaClass'
+import InputPesoClass from './Componentes/Input/InputPesoClass'
 import './App.css'
 
 function App(){
@@ -50,19 +52,29 @@ function App(){
       <h1 onClick={() => focusInput()}>Calcular IMC</h1>
 
       <div className='inputs'>
-        <input
+        {/* <input
         onChange={event => atualizarPeso(event)}
         value={pesoAltura.peso}
         type='number'
         placeholder='Digite o seu peso (em kg)'
-        required/>
+        required/> */}
+        <InputPesoClass
+        placeholder='Digite o seu peso (em kg)'
+        type='number'
+        value={pesoAltura.peso}
+        onChange={atualizarPeso}/>
 
-        <input
+        {/* <input
         onChange={event => atualizarAltura(event)}
         value={pesoAltura.altura}
         type='number'
         placeholder='Digite a sua altura (em metros)'
-        required/>
+        required/> */}
+        <InputAlturaClass
+        placeholder='Digite a sua altura (em metros)'
+        type='number'
+        value={pesoAltura.altura}
+        onChange={atualizarAltura}/>
 
         <button onClick={() => validador()}>Calcular IMC</button>
       </div>

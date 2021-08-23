@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import TabelaIMC from './Componentes/Tabela/Tabela';
+import TabelaIMC from './Componentes/Tabela/Tabela'
+import TabelaImcClass from './Componentes/Tabela/TabelaClass'
 import './App.css'
-// import Div from './Componentes/Styles/Styles'
 
 function App(){
   useEffect(() => {
@@ -61,13 +61,14 @@ function App(){
         onChange={event => atualizarAltura(event)}
         value={pesoAltura.altura}
         type='number'
-        placeholder='Digite a sua altura (em m)'
+        placeholder='Digite a sua altura (em metros)'
         required/>
 
         <button onClick={() => validador()}>Calcular IMC</button>
       </div>
 
-      <TabelaIMC/>
+      {/* <TabelaIMC/> */}
+      <TabelaImcClass/>
     </div>
   )
 }

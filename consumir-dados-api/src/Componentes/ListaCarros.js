@@ -6,6 +6,7 @@ export default class ListaCarros extends React.Component {
     carros: []
   }
 
+  // é executado logo após seu componente ser montado e também após o render; ótimo para requestes, listeners e promisses
   componentDidMount() {
     axios.get('https://primeiraapireact.talysonxx.repl.co')
     .then(responde => {

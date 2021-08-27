@@ -19,9 +19,9 @@ export default class ListaCarros extends React.Component {
   render() {
     return (
       <div>
-        {this.state.carros.map(carro => (
-          <div key={carro.id}>
-            {carro.marca} - {carro.modelo}
+        {this.state.carros.map(({id, modelo, marca}) => (
+          <div key={id}>
+           {id} | {marca} - {modelo}
           </div>
         ))}
       </div>

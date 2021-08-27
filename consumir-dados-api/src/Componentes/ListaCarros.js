@@ -6,21 +6,26 @@ export default class ListaCarros extends React.Component {
     carros: []
   }
 
-  // é executado logo após seu componente ser montado e também após o render; ótimo para requestes, listeners e promisses
+  // é executado logo após seu componente ser montado e também após o render; ótimo para requestes, listeners, setState e promisses
   componentDidMount() {
     axios.get('https://primeiraapireact.talysonxx.repl.co')
-    .then(responde => {
+    .then(({data}) => {
         console.log('Requisição realizada com sucesso')
-        const dadosCarros = responde.data
-        this.setState({carros: dadosCarros})
+        // const dadosCarros = responde.data
+        this.setState({carros: data})
+
+        // console.log(data)
+        // console.log(this.state.carros)
       })
     .catch(error => console.log('Houve alguem erro:', error))
   }
 
   render() {
+    const {carros} = this.state
+
     return (
       <div>
-        {this.state.carros.map(({id, modelo, marca}) => (
+        {carros.map(({id, modelo, marca}) => (
           <div key={id}>
            {id} | {marca} - {modelo}
           </div>

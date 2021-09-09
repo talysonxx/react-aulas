@@ -5,7 +5,7 @@ function App() {
 
   function renderColunas(elemento, posicao) {
     return (
-      <Fragment key={posicao}>
+      <Fragment key={`coluna-${posicao}`}>
         <td>elemento {elemento}</td>
       </Fragment>
     )

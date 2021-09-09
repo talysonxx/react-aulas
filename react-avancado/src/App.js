@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react'
 
 function App() {
-  const colunas = ['1', '2', '3']
+  const elementos = ['1', '2', '3']
 
-  function renderColunas(elemento, posicao) {
+  function renderElementos(elemento, posicao) {
     return (
       <Fragment key={posicao}>
         <td>elemento {elemento}</td>
@@ -14,7 +14,7 @@ function App() {
   return (
     <table>
       <tr>
-        {colunas.map(renderColunas)}
+        {elementos.map(renderElementos)}
       </tr>
     </table>
   )

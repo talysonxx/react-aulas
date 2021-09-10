@@ -8,11 +8,11 @@ function Gallery({fotos}) {
 
   function renderizarFotos(foto, index) {
     return (
-      <Fragment key={index}>
+      <div key={index}>
         <Img src={foto} alt=''/>
         <Button onClick={() => removerFoto(index)}>Remover foto {index}</Button>
         <br/>
-      </Fragment>
+      </div>
     )
   }
   function removerFoto(indexFoto) {

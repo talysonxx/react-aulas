@@ -1,0 +1,15 @@
+dentro de src>
+{
+components (componentes):
+crie um index e import e exporte todos os componentes, para facilitar a importação;
+containers (onde ficam as páginas);
+
+assets (onde ficam imagens e estilos globais);
+
+communs>utils:
+validador de cpfs, limpeza de strings... (apenas funções);
+
+resources (apis);
+
+routes (rotas);
+}
